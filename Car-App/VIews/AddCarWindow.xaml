@@ -1,0 +1,23 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Car_App.Views"
+        xmlns:Models="clr-namespace:Car_App.Models" x:Class="Car_App.Views.AddCarWindow"
+        mc:Ignorable="d"
+        Title="AddCar" Height="210" Width="300" ResizeMode="CanResizeWithGrip" Icon="/VIews/Icon1.ico" WindowStartupLocation="CenterScreen" MinWidth="300" MinHeight="210" MaxWidth="600" MaxHeight="350">
+    <Grid RenderTransformOrigin="0.5,0.5" MinHeight="190" MinWidth="300" MaxWidth="600" MaxHeight="350" Width="280">
+        <TextBox x:Name="RegistrationNumTextBox" Margin="130,5,10,0" Text="{Binding RegistrationNumber}" TextWrapping="Wrap" VerticalAlignment="Top" Height="18"/>
+        <TextBox x:Name="VinTextBox" Margin="130,31,10,0" Text="{Binding VIN}" TextWrapping="Wrap" VerticalAlignment="Top" Height="18"/>
+        <TextBox x:Name="ModelTextBox"  MaxLength="20" Margin="130,57,10,0" Text="{Binding Model}" TextWrapping="Wrap" VerticalAlignment="Top" Height="18"/>
+        <TextBox x:Name="BrandTextBox"  MaxLength="20" Margin="130,83,10,0" Text="{Binding Brand}" TextWrapping="Wrap" VerticalAlignment="Top" Height="18"/>
+        <Button x:Name="AddCar" Content="Add Car" Style="{StaticResource ButtonStyle}" Margin="20,120,170,20" VerticalAlignment="Bottom" Click="AddCar_Click" Height="40" HorizontalAlignment="Left" Width="100" Grid.Row="1" Grid.Column="1"/>
+        <Label Content="Registration Number" HorizontalAlignment="Left" Margin="6,-1,0,0" VerticalAlignment="Top" Height="26"/>
+        <Label Content="VIN" HorizontalAlignment="Left" Margin="6,24,0,0" VerticalAlignment="Top" Height="26"/>
+        <Label Content="Model" HorizontalAlignment="Left" Margin="6,51,0,0" VerticalAlignment="Top" Height="26"/>
+        <Label Content="Brand" HorizontalAlignment="Left" Margin="6,79,0,0" VerticalAlignment="Top" Height="26"/>
+        <Button x:Name="BackToMenuButton" Style="{StaticResource ButtonStyle}" Content="Back To Menu" Margin="170,120,20,20" Click="BackToMenu" Height="40" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="100" Grid.Row="1" Grid.Column="6"/>
+
+    </Grid>
+</Window>
