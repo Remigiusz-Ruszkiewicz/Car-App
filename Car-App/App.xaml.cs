@@ -1,4 +1,5 @@
 ﻿using Car_App.Data;
+using Car_App.VIews;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -23,12 +24,13 @@ namespace Car_App
             ServiceCollection services = new ServiceCollection();
             services.AddDbContext<DataContext>(options => options.UseSqlite("Data Source=CompanyCars.db"));
             services.AddSingleton<MainWindow>();
+            services.AddSingleton<LoginWindow>();
             serviceProvider = services.BuildServiceProvider();
         }
 
         private void OnStartup(object s, StartupEventArgs e)
         {
-            var mainWindow = serviceProvider.GetService<MainWindow>();
+            var mainWindow = serviceProvider.GetService<LoginWindow>();
             mainWindow.Show();
         }
     }

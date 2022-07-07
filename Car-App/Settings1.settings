@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Car_App" GeneratedClassName="Settings1">
+  <Profiles />
+  <Settings>
+    <Setting Name="EncryptKey" Type="System.String" Scope="User">
+      <Value Profile="(Default)">k25w9g6D4rYOHA0K8fzu</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
