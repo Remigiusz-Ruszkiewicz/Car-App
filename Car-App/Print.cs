@@ -29,7 +29,7 @@ namespace Car_App
             float firstLine = ev.Graphics.MeasureString("Registration Number", printFont).Width + leftMargin + 50;
             float secondLine = ev.Graphics.MeasureString("VIN", printFont).Width + firstLine + 220;
             float thirdLine = ev.Graphics.MeasureString("Model", printFont).Width + secondLine + 220;
-            List<Car> cars = dataContext.Car.ToList();
+            List<Car> cars = dataContext.Cars.ToList();
             float linesPerPage = ev.MarginBounds.Height /
                printFont.GetHeight(ev.Graphics);
             string titleLine = "List of Cars";

@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Car_App.Models
 {
-    public class User
+    public class Client
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
-        public string Surname { get; set; }
-        public int RoleId { get; set; }
+        public int Surname { get; set; }
+
     }
 }

@@ -11,30 +11,30 @@ namespace Car_App
 {
     public partial class MainWindow : Window
     {
-        private readonly DataContext dataContext;
+        readonly DataContext context;
         Car ActiveCar = new Car();
         public MainWindow(DataContext dataContext)
         {
-            this.dataContext = dataContext;
+            this.context = dataContext;
             InitializeComponent();
             GetCars();
         }
 
         private void AddCarButton_Click(object sender, RoutedEventArgs e)
         {
-            AddCarWindow addcarwindow = new AddCarWindow(dataContext);
+            AddCarWindow addcarwindow = new AddCarWindow(context);
             addcarwindow.Show();
         }
         public void GetCars()
         {
-            CarDataGrid.ItemsSource = dataContext.Car.ToList();
+            CarDataGrid.ItemsSource = context.Cars.ToList();
         }
 
         private void UpdateCar(object s, RoutedEventArgs e)
         {
             EditStackPanel.Visibility = Visibility.Visible;
-            dataContext.Update(ActiveCar);
-            dataContext.SaveChanges();
+            context.Update(ActiveCar);
+            context.SaveChanges();
             GetCars();
             ClearUpdateCarGrid();
             EditStackPanel.Visibility = Visibility.Hidden;
@@ -55,14 +55,14 @@ namespace Car_App
         private void DeleteCar(object s, RoutedEventArgs e)
         {
             var productToDelete = (s as FrameworkElement).DataContext as Car;
-            dataContext.Car.Remove(productToDelete);
-            dataContext.SaveChanges();
+            context.Cars.Remove(productToDelete);
+            context.SaveChanges();
             GetCars();
         }
 
         private void AddCarWindow(object sender, RoutedEventArgs e)
         {
-            AddCarWindow addCarWindow = new AddCarWindow(dataContext);
+            AddCarWindow addCarWindow = new AddCarWindow(context);
             addCarWindow.Show();
             Close();
         }
@@ -74,7 +74,7 @@ namespace Car_App
         }
         private void PrintGridButton(object sender, RoutedEventArgs e)
         {
-            Print a = new Print(dataContext);
+            Print a = new Print(context);
             a.StartPrint();
             a = null;
         }

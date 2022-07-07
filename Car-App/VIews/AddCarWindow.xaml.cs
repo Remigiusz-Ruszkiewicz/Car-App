@@ -36,7 +36,7 @@ namespace Car_App.Views
             }
             try
             {
-                dataContext.Car.Add(UserInput());
+                dataContext.Cars.Add(UserInput());
                 dataContext.SaveChanges();
             }
             catch (Exception ex)
