@@ -10,7 +10,7 @@ namespace Car_App.Models
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
-        public int Surname { get; set; }
+        public string Surname { get; set; }
 
     }
 }

@@ -13,6 +13,6 @@ namespace Car_App.Models
         public string VIN { get; set; }
         public string Model { get; set; }
         public string Brand { get; set; }
-        public User EditedBy { get; set; }
+        public Guid UserId { get; set; }
     }
 }

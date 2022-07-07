@@ -22,25 +22,30 @@ namespace Car_App.Data
         public DbSet<Client> Clients { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            Guid user1 = Guid.NewGuid();
+            Guid user2 = Guid.NewGuid();
+            Guid role1 = Guid.NewGuid();
+            Guid role2 = Guid.NewGuid();
             modelBuilder.Entity<Car>().HasKey(x => x.CarId);
             modelBuilder.Entity<User>().HasKey(x => x.Id);
             modelBuilder.Entity<Role>().HasKey(x => x.Id);
             modelBuilder.Entity<Client>().HasKey(x => x.Id);
             modelBuilder.Entity<Role>().HasData(
-                new Role() { Id = 1, Name = "Admin" },
-                new Role() { Id = 2, Name = "User" }
+                new Role() { Id = role1, Name = "Admin" },
+                new Role() { Id = role2, Name = "User" }
                 );
             modelBuilder.Entity<User>().HasData(
-                new User() { Id = Guid.NewGuid(),Name = "Adam",Surname = "Kowalski",RoleId =1},
-                new User() { Id = Guid.NewGuid(),Name = "Janusz",Surname = "Marczyk",RoleId =2}
+                new User() { Id = user1, Name = "Adam",Surname = "Kowalski",RoleId = role1 },
+                new User() { Id = user2, Name = "Janusz",Surname = "Marczyk",RoleId = role2 }
                 ) ;
             modelBuilder.Entity<Client>().HasData(
-                new User() { Id = Guid.NewGuid(), Name = "Adam", Surname = "Kowalski", RoleId = 1 },
-                new User() { Id = Guid.NewGuid(), Name = "Janusz", Surname = "Marczyk", RoleId = 2 }
+                new Client() { Id = Guid.NewGuid(), Name = "Jan", Surname = "Marek"},
+                new Client() { Id = Guid.NewGuid(), Name = "Arkadiusz", Surname = "Kwiatkowski"}
                 );
             modelBuilder.Entity<Car>().HasData(
-                new User() { Id = Guid.NewGuid(), Name = "Adam", Surname = "Kowalski", RoleId = 1 },
-                new User() { Id = Guid.NewGuid(), Name = "Janusz", Surname = "Marczyk", RoleId = 2 }
+                new Car() { CarId = Guid.NewGuid(), RegistrationNumber = "KMYSH70", Model = "A6C5", Brand = "Audi",VIN="12345678900987654",UserId= user1 },
+                new Car() { CarId = Guid.NewGuid(), RegistrationNumber = "KMYSH72", Model = "A6C6", Brand = "Audi",VIN="12345678900987612",UserId= user1 },
+                new Car() { CarId = Guid.NewGuid(), RegistrationNumber = "KR45550", Model = "Panamera", Brand = "Porshe", VIN = "09876543211234567", UserId = user2 }
                 );
             base.OnModelCreating(modelBuilder);
         }

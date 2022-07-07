@@ -11,6 +11,6 @@ namespace Car_App.Models
         public Guid Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
-        public int RoleId { get; set; }
+        public Guid RoleId { get; set; }
     }
 }
