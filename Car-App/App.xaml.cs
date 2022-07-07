@@ -21,7 +21,7 @@ namespace Car_App
 
         public App()
         {
-            ServiceCollection services = new ServiceCollection();
+            ServiceCollection services = new();
             services.AddDbContext<DataContext>(options => options.UseSqlite("Data Source=CompanyCars.db"));
             services.AddSingleton<MainWindow>();
             services.AddSingleton<LoginWindow>();

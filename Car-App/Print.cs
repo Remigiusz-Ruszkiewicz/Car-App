@@ -21,7 +21,7 @@ namespace Car_App
         {
             this.dataContext = dataContext;
         }
-        private void pd_PrintPage(object sender, PrintPageEventArgs ev)
+        private void Pd_PrintPage(object sender, PrintPageEventArgs ev)
         {
             float leftMargin = ev.MarginBounds.Left;
             float topMargin = ev.MarginBounds.Top;
@@ -73,8 +73,8 @@ namespace Car_App
             try
             {
                 printFont = new Font("Arial", 10);
-                PrintDocument pd = new PrintDocument();
-                pd.PrintPage += new PrintPageEventHandler(pd_PrintPage);
+                PrintDocument pd = new();
+                pd.PrintPage += new PrintPageEventHandler(Pd_PrintPage);
                 pd.DefaultPageSettings.Landscape = true;
                 pd.Print();
                 pd.Dispose();

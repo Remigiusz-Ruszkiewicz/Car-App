@@ -35,8 +35,8 @@ namespace Car_App.Data
                 new Role() { Id = roleUser, Name = "User" }
                 );
             modelBuilder.Entity<User>().HasData(
-                new User() { Id = user1, Login = "Adam",Password = "Kowalski",RoleId = roleAdmin },
-                new User() { Id = user2, Login = "Janusz",Password = "Marczyk",RoleId = roleUser }
+                new User() { Id = user1, Login = "admin",Password = "KRPB7a0uN9UmAuGj8s7ChQ==", RoleId = roleAdmin },
+                new User() { Id = user2, Login = "janusz",Password = "KRPB7a0uN9UmAuGj8s7ChQ==", RoleId = roleUser }
                 ) ;
             modelBuilder.Entity<Client>().HasData(
                 new Client() { Id = Guid.NewGuid(), Name = "Jan", Surname = "Marek"},

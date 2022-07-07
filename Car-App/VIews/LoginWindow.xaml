@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Car_App.VIews"
         mc:Ignorable="d"
-        Title="LoginWindow" Height="300" Width="350">
+        Title="Login/Register" Height="300" Width="350" ResizeMode="NoResize" Icon="/VIews/Icon1.ico" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>

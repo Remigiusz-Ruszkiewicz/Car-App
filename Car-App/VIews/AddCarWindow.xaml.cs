@@ -2,26 +2,17 @@
 using Car_App.Helpers;
 using Car_App.Models;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Car_App.Views
 {
     public partial class AddCarWindow : Window
     {
-        public AddCarWindow(DataContext dataContext)
+        private User _currentUser;
+        public AddCarWindow(DataContext dataContext,User user)
         {
+            _currentUser = user;
             InitializeComponent();
             this.dataContext = dataContext;
         }
@@ -46,7 +37,7 @@ namespace Car_App.Views
             }
             if (string.IsNullOrEmpty(message)) MessageBox.Show("Car added succesfuly", "", MessageBoxButton.OK); BackToMenu(null, null);
         }
-        private Car UserInput() => new Car()
+        private Car UserInput() => new()
         {
             CarId = Guid.NewGuid(),
             RegistrationNumber = RegistrationNumTextBox.Text,
@@ -56,7 +47,7 @@ namespace Car_App.Views
         };
         private void BackToMenu(object sender, RoutedEventArgs e)
         {
-            MainWindow main = new MainWindow(dataContext);
+            MainWindow main = new(dataContext,_currentUser);
             main.Show();
             Close();
         }

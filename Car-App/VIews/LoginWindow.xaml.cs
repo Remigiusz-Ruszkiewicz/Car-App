@@ -1,4 +1,5 @@
 ﻿using Car_App.Data;
+using Car_App.Helpers;
 using Car_App.Models;
 using System;
 using System.Collections.Generic;
@@ -32,7 +33,7 @@ namespace Car_App.VIews
         {
             if (_dataContext.Users.Where(x => x.Login == loginTextBox.Text).FirstOrDefault() == null)
             {
-                _dataContext.Users.Add(
+                _ = _dataContext.Users.Add(
                 new User
                 {
                     Login = loginTextBox.Text,
@@ -42,19 +43,18 @@ namespace Car_App.VIews
             );
                 _dataContext.SaveChanges(); ;
             }
-            else { 
-            MessageBox.Show("User Already Exist. Try another Login.");
+            else
+            {
+                MessageBox.Show("User Already Exist. Try another Login.");
             }
         }
-        
         private void Login_Click(object sender, RoutedEventArgs e)
         {
             User user = _dataContext.Users.Where(x => x.Login == loginTextBox.Text).FirstOrDefault();
             if (user != null && EncryptionHelper.Decrypt(user.Password) == passwordBox.Password)
             {
-                new MainWindow(_dataContext).Show();
+                new MainWindow(_dataContext,user).Show();
                 Close();
-                
             }
         }
     }

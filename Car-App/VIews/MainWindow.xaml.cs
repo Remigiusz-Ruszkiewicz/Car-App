@@ -5,29 +5,40 @@ using Car_App.Views;
 using Car_App.Models;
 using Microsoft.Data.Sqlite;
 using System.Linq;
-
+using System;
+using Car_App.VIews;
 
 namespace Car_App
 {
     public partial class MainWindow : Window
     {
         readonly DataContext context;
-        Car ActiveCar = new Car();
-        public MainWindow(DataContext dataContext)
+        private User _currentUser;
+        Car ActiveCar = new();
+        public MainWindow(DataContext dataContext,User user)
         {
-            this.context = dataContext;
+            _currentUser = user;
+            context = dataContext;
             InitializeComponent();
             GetCars();
         }
 
         private void AddCarButton_Click(object sender, RoutedEventArgs e)
         {
-            AddCarWindow addcarwindow = new AddCarWindow(context);
+            AddCarWindow addcarwindow = new(context,_currentUser);
             addcarwindow.Show();
         }
         public void GetCars()
         {
+
             CarDataGrid.ItemsSource = context.Cars.ToList();
+            if (_currentUser.RoleId == Guid.Parse("f63a2990-440a-4dc5-b5fb-c3ca93ad6e39"))
+            {
+                addButton.Visibility = Visibility.Collapsed;
+                refreshButton.Visibility = Visibility.Collapsed;
+                CarDataGrid.Columns.RemoveAt(5);
+                CarDataGrid.Columns.RemoveAt(5);
+            }
         }
 
         private void UpdateCar(object s, RoutedEventArgs e)
@@ -62,7 +73,7 @@ namespace Car_App
 
         private void AddCarWindow(object sender, RoutedEventArgs e)
         {
-            AddCarWindow addCarWindow = new AddCarWindow(context);
+            AddCarWindow addCarWindow = new(context,_currentUser);
             addCarWindow.Show();
             Close();
         }
@@ -74,10 +85,14 @@ namespace Car_App
         }
         private void PrintGridButton(object sender, RoutedEventArgs e)
         {
-            Print a = new Print(context);
+            Print a = new(context);
             a.StartPrint();
-            a = null;
         }
 
+        private void LogoutButton(object sender, RoutedEventArgs e)
+        {
+            new LoginWindow(context).Show();
+            Close();
+        }
     }
 }
