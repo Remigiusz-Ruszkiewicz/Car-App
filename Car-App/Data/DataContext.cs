@@ -22,21 +22,21 @@ namespace Car_App.Data
         public DbSet<Client> Clients { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            Guid user1 = Guid.NewGuid();
-            Guid user2 = Guid.NewGuid();
-            Guid role1 = Guid.NewGuid();
-            Guid role2 = Guid.NewGuid();
+            Guid user1 = Guid.Parse("5f2d4ef2-3c0e-46a4-ade8-748c91153b8c");
+            Guid user2 = Guid.Parse("7544783e-0339-4d39-be3f-d1c9c6217f21");
+            Guid roleAdmin = Guid.Parse("b4bcc107-4cf5-493f-8810-48349ab05828");
+            Guid roleUser = Guid.Parse("f63a2990-440a-4dc5-b5fb-c3ca93ad6e39");
             modelBuilder.Entity<Car>().HasKey(x => x.CarId);
             modelBuilder.Entity<User>().HasKey(x => x.Id);
             modelBuilder.Entity<Role>().HasKey(x => x.Id);
             modelBuilder.Entity<Client>().HasKey(x => x.Id);
             modelBuilder.Entity<Role>().HasData(
-                new Role() { Id = role1, Name = "Admin" },
-                new Role() { Id = role2, Name = "User" }
+                new Role() { Id = roleAdmin, Name = "Admin" },
+                new Role() { Id = roleUser, Name = "User" }
                 );
             modelBuilder.Entity<User>().HasData(
-                new User() { Id = user1, Name = "Adam",Surname = "Kowalski",RoleId = role1 },
-                new User() { Id = user2, Name = "Janusz",Surname = "Marczyk",RoleId = role2 }
+                new User() { Id = user1, Login = "Adam",Password = "Kowalski",RoleId = roleAdmin },
+                new User() { Id = user2, Login = "Janusz",Password = "Marczyk",RoleId = roleUser }
                 ) ;
             modelBuilder.Entity<Client>().HasData(
                 new Client() { Id = Guid.NewGuid(), Name = "Jan", Surname = "Marek"},

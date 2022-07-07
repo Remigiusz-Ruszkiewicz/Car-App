@@ -2,10 +2,9 @@
 using System.Text;
 using System.Security.Cryptography;
 using System;
+using Car_App;
 
-namespace Car_App.Helpers
-{
-    public static class EncryptionHelper
+public static class EncryptionHelper
     {
         public static string Encrypt(string clearText)
         {
@@ -49,4 +48,3 @@ namespace Car_App.Helpers
             return cipherText;
         }
     } 
-}
