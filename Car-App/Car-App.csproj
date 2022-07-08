@@ -5,6 +5,9 @@
     <TargetFramework>net5.0-windows</TargetFramework>
     <RootNamespace>Car_App</RootNamespace>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon />
+    <StartupObject>Car_App.App</StartupObject>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
