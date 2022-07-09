@@ -12,11 +12,13 @@
         <TextBox x:Name="VinTextBox" Margin="130,31,10,0" Text="{Binding VIN}" TextWrapping="Wrap" VerticalAlignment="Top" Height="18"/>
         <TextBox x:Name="ModelTextBox"  MaxLength="20" Margin="130,57,10,0" Text="{Binding Model}" TextWrapping="Wrap" VerticalAlignment="Top" Height="18"/>
         <TextBox x:Name="BrandTextBox"  MaxLength="20" Margin="130,83,10,0" Text="{Binding Brand}" TextWrapping="Wrap" VerticalAlignment="Top" Height="18"/>
+        <ComboBox x:Name="clientDropDown"  Margin="130,113,10,0" Text="{Binding Client}" VerticalAlignment="Top" Height="18"/>
         <Button x:Name="AddCar" Content="Add Car" Style="{StaticResource ButtonStyle}" Margin="20,120,170,20" VerticalAlignment="Bottom" Click="AddCar_Click" Height="40" HorizontalAlignment="Left" Width="100" Grid.Row="1" Grid.Column="1"/>
         <Label Content="Registration Number" HorizontalAlignment="Left" Margin="6,-1,0,0" VerticalAlignment="Top" Height="26"/>
         <Label Content="VIN" HorizontalAlignment="Left" Margin="6,24,0,0" VerticalAlignment="Top" Height="26"/>
         <Label Content="Model" HorizontalAlignment="Left" Margin="6,51,0,0" VerticalAlignment="Top" Height="26"/>
         <Label Content="Brand" HorizontalAlignment="Left" Margin="6,79,0,0" VerticalAlignment="Top" Height="26"/>
+        <Label Content="Client" HorizontalAlignment="Left" Margin="6,109,0,0" VerticalAlignment="Top" Height="26"/>
         <Button x:Name="BackToMenuButton" Style="{StaticResource ButtonStyle}" Content="Back To Menu" Margin="170,120,20,20" Click="BackToMenu" Height="40" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="100" Grid.Row="1" Grid.Column="6"/>
 
     </Grid>

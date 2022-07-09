@@ -24,6 +24,8 @@ namespace Car_App.Data
         {
             Guid user1 = Guid.Parse("5f2d4ef2-3c0e-46a4-ade8-748c91153b8c");
             Guid user2 = Guid.Parse("7544783e-0339-4d39-be3f-d1c9c6217f21");
+            Guid client1 = Guid.Parse("5f2d4ef2-3c0e-46a4-ade8-748c91323b8c");
+            Guid client2 = Guid.Parse("7544783e-0339-4d39-be3f-d1c9c1317f21");
             Guid roleAdmin = Guid.Parse("b4bcc107-4cf5-493f-8810-48349ab05828");
             Guid roleUser = Guid.Parse("f63a2990-440a-4dc5-b5fb-c3ca93ad6e39");
             modelBuilder.Entity<Car>().HasKey(x => x.CarId);
@@ -43,8 +45,8 @@ namespace Car_App.Data
                 new Client() { Id = Guid.NewGuid(), Name = "Arkadiusz", Surname = "Kwiatkowski"}
                 );
             modelBuilder.Entity<Car>().HasData(
-                new Car() { CarId = Guid.NewGuid(), RegistrationNumber = "KMYSH70", Model = "A6C5", Brand = "Audi",VIN="12345678900987654",UserId= user1 },
-                new Car() { CarId = Guid.NewGuid(), RegistrationNumber = "KMYSH72", Model = "A6C6", Brand = "Audi",VIN="12345678900987612",UserId= user1 },
+                new Car() { CarId = Guid.NewGuid(), RegistrationNumber = "KMYSH70", Model = "A6C5", Brand = "Audi",VIN="12345678900987654",UserId= user1,ClientId = client1 },
+                new Car() { CarId = Guid.NewGuid(), RegistrationNumber = "KMYSH72", Model = "A6C6", Brand = "Audi",VIN="12345678900987612",UserId= user1 ,ClientId = client2 },
                 new Car() { CarId = Guid.NewGuid(), RegistrationNumber = "KR45550", Model = "Panamera", Brand = "Porshe", VIN = "09876543211234567", UserId = user2 }
                 );
             base.OnModelCreating(modelBuilder);

@@ -2,7 +2,9 @@
 using Car_App.Helpers;
 using Car_App.Models;
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Windows;
 
 namespace Car_App.Views
@@ -15,8 +17,16 @@ namespace Car_App.Views
             _currentUser = user;
             InitializeComponent();
             this.dataContext = dataContext;
+            FillComboBox();
         }
         private readonly DataContext dataContext;
+        private void FillComboBox() {
+            //List<Client> clients = dataContext.Clients;
+            foreach (var item in dataContext.Clients)
+            {
+                clientDropDown.Items.Add(item.Name+"  "+ item.Surname);
+            }
+        }
         private void AddCar_Click(object sender, RoutedEventArgs e)
         {
             string message = CarDataValidator.InputDataValidator(UserInput());
@@ -43,7 +53,8 @@ namespace Car_App.Views
             RegistrationNumber = RegistrationNumTextBox.Text,
             VIN = VinTextBox.Text,
             Brand = BrandTextBox.Text,
-            Model = ModelTextBox.Text
+            Model = ModelTextBox.Text,
+            ClientId  = Guid.NewGuid()
         };
         private void BackToMenu(object sender, RoutedEventArgs e)
         {

@@ -15,14 +15,26 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_A2ECF17A5070472FA61283EF52ADB78F"
+        "MsmKey" = "8:_15D0AFE322C942BFA6211ABD3CA7E669"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_EEA5B8514D1046C482616D3FE6098295"
+        "MsmKey" = "8:_2CB5CEFF04524F299E0CE2CE708AF298"
         "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F35F5595638945DFA9926BE916A32832"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_F35F5595638945DFA9926BE916A32832"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -43,6 +55,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -59,6 +79,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -76,6 +112,14 @@
         {
             "LaunchCondition"
             {
+                "{A06ECF26-33A3-4562-8140-9B0E340D4F24}:_77BCF3685A574C77BCA3C58046BA6749"
+                {
+                "Name" = "8:.NET Framework"
+                "Message" = "8:[VSDNETMSG]"
+                "FrameworkVersion" = "8:.NETFramework,Version=v4.7.2"
+                "AllowLaterVersions" = "11:FALSE"
+                "InstallUrl" = "8:http://go.microsoft.com/fwlink/?LinkId=863262"
+                }
                 "{A06ECF26-33A3-4562-8140-9B0E340D4F24}:_8D0C971D478B4F588BABFB6E797A4899"
                 {
                 "Name" = "8:.NET Core"
@@ -90,10 +134,41 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A2ECF17A5070472FA61283EF52ADB78F"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_15D0AFE322C942BFA6211ABD3CA7E669"
             {
-            "SourcePath" = "8:..\\..\\..\\..\\Downloads\\CarApp-master\\CarApp\\Materials\\Icon1.ico"
+            "SourcePath" = "8:..\\Car-App\\VIews\\Icon1.ico"
             "TargetName" = "8:Icon1.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_920CF48DD24641EDA0E6887AC1C8610D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_F35F5595638945DFA9926BE916A32832"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Microsoft.Build.Tasks, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_F35F5595638945DFA9926BE916A32832"
+                    {
+                    "Name" = "8:Microsoft.Build.Tasks.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:C:\\Windows\\Microsoft.NET\\Framework\\v2.0.50727\\Microsoft.Build.Tasks.dll"
+            "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_920CF48DD24641EDA0E6887AC1C8610D"
             "Condition" = "8:"
@@ -167,7 +242,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:WPFApp"
         "ProductCode" = "8:{B088F3D6-C859-47D0-BD8A-54C0CE83C8EB}"
-        "PackageCode" = "8:{B09ED89E-156F-4C60-B386-D91925D00A7A}"
+        "PackageCode" = "8:{F33C6458-3E06-46D7-B8E0-3EB9469CD72A}"
         "UpgradeCode" = "8:{167ECC84-29CE-4DB4-978C-DC62B9958957}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -287,15 +362,15 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_057D5151630943D0A7007023D50946B4"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_2A856576A3A8474C894CBF0A495959CF"
             {
-            "Name" = "8:mainapp"
+            "Name" = "8:Shortcut to Publish Items from Car-App (Active)"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_EEA5B8514D1046C482616D3FE6098295"
+            "Target" = "8:_2CB5CEFF04524F299E0CE2CE708AF298"
             "Folder" = "8:_7E49BF4E687B44F08406E2D41C467E99"
             "WorkingFolder" = "8:_920CF48DD24641EDA0E6887AC1C8610D"
             "Icon" = "8:"
@@ -700,9 +775,9 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_EEA5B8514D1046C482616D3FE6098295"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_2CB5CEFF04524F299E0CE2CE708AF298"
             {
-            "SourcePath" = "8:..\\Car-App\\obj\\Release\\net5.0-windows\\Car-App.dll"
+            "SourcePath" = "8:..\\Car-App\\obj\\Release\\net5.0-windows\\apphost.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_920CF48DD24641EDA0E6887AC1C8610D"
@@ -721,7 +796,7 @@
             "IsolateTo" = "8:"
             "ProjectOutputGroupRegister" = "3:1"
             "OutputConfiguration" = "8:"
-            "OutputGroupCanonicalName" = "8:Built"
+            "OutputGroupCanonicalName" = "8:PublishItems"
             "OutputProjectGuid" = "8:{B4E94615-522F-4843-A246-65F26AEDE58C}"
             "ShowKeyOutput" = "11:TRUE"
                 "ExcludeFilters"

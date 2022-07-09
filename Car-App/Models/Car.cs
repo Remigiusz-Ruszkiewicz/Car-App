@@ -14,5 +14,6 @@ namespace Car_App.Models
         public string Model { get; set; }
         public string Brand { get; set; }
         public Guid UserId { get; set; }
+        public Guid ClientId { get; set; }
     }
 }
